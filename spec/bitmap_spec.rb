@@ -16,5 +16,12 @@ describe Bitmap do
                 expect(@bitmap.print).to eq("OOO\nOOO\n")
             end
         end
+
+        describe "#clear" do
+            it "clears the bitmap" do
+                @bitmap.clear
+                expect(@bitmap.print).to eq("OOO\nOOO\n")
+            end
+        end
     end
 end

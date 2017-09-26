@@ -11,6 +11,8 @@ class BitmapEditor
         puts @image.print
       when  /I (\d+) (\d+)/
         @image = Bitmap.new($1.to_i, $2.to_i)
+      when 'C'
+        @image.clear
       end
     end
   end

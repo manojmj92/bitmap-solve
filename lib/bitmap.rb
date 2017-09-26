@@ -3,7 +3,7 @@ class Bitmap
   def initialize(rows,columns)
     @rows = rows
     @columns = columns
-    create_image
+    @image = clean_image
   end
 
   def print
@@ -12,9 +12,13 @@ class Bitmap
     end
   end
 
+  def clear
+    @image = clean_image
+  end
+
   private
 
-  def create_image
-    @image ||= Array.new(rows) { Array.new(columns) {'O'} }
+  def clean_image
+    Array.new(rows) { Array.new(columns) {'O'} }
   end
 end
