@@ -13,6 +13,8 @@ class BitmapEditor
         @image = Bitmap.new($1.to_i, $2.to_i)
       when 'C'
         @image.clear
+      when /L (\d+) (\d+) (\w)/
+        @image.set_pixel_colour($1.to_i, $2.to_i, $3)
       end
     end
   end
