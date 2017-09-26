@@ -1,8 +1,8 @@
 class Bitmap
-  attr_reader :rows, :columns, :image
-  def initialize(rows,columns)
-    @rows = rows
-    @columns = columns
+  attr_reader :width, :height, :image
+  def initialize(width: ,height: )
+    @height = height
+    @width = width
     @image = clean_image
   end
 
@@ -16,13 +16,25 @@ class Bitmap
     @image = clean_image
   end
 
-  def set_pixel_colour(x_cordinate, y_cordinate, colour)
-    @image[x_cordinate - 1][y_cordinate - 1] = colour
+  def set_pixel_colour(x_cordinate:, y_cordinate:, colour:)
+    @image[y_cordinate - 1][x_cordinate - 1] = colour
+  end
+
+  def colour_vertical(x_cordinate:, y_cordinate_start:, y_cordinate_end:, colour:)
+    (y_cordinate_start..y_cordinate_end).each do |y_cordinate|
+      set_pixel_colour(x_cordinate: x_cordinate, y_cordinate: y_cordinate, colour: colour)
+    end
+  end
+
+  def colour_horizontal(y_cordinate: , x_cordinate_start:, x_cordinate_end:, colour:)
+    (x_cordinate_start..x_cordinate_end).each do |x_cordinate|
+      set_pixel_colour(x_cordinate: x_cordinate, y_cordinate: y_cordinate, colour: colour)
+    end
   end
 
   private
 
   def clean_image
-    Array.new(rows) { Array.new(columns) {'O'} }
+    Array.new(height) { Array.new(width) {'O'} }
   end
 end
