@@ -1,6 +1,6 @@
 class Bitmap
   attr_reader :width, :height, :image
-  def initialize(width: ,height: )
+  def initialize(width,height)
     @height = height
     @width = width
     @image = clean_image
@@ -16,19 +16,19 @@ class Bitmap
     @image = clean_image
   end
 
-  def set_pixel_colour(x_cordinate:, y_cordinate:, colour:)
+  def set_pixel_colour(x_cordinate, y_cordinate, colour)
     @image[y_cordinate - 1][x_cordinate - 1] = colour
   end
 
-  def colour_vertical(x_cordinate:, y_cordinate_start:, y_cordinate_end:, colour:)
+  def colour_vertical(x_cordinate, y_cordinate_start, y_cordinate_end, colour)
     (y_cordinate_start..y_cordinate_end).each do |y_cordinate|
-      set_pixel_colour(x_cordinate: x_cordinate, y_cordinate: y_cordinate, colour: colour)
+      set_pixel_colour(x_cordinate, y_cordinate, colour)
     end
   end
 
-  def colour_horizontal(y_cordinate: , x_cordinate_start:, x_cordinate_end:, colour:)
+  def colour_horizontal(y_cordinate, x_cordinate_start, x_cordinate_end, colour)
     (x_cordinate_start..x_cordinate_end).each do |x_cordinate|
-      set_pixel_colour(x_cordinate: x_cordinate, y_cordinate: y_cordinate, colour: colour)
+      set_pixel_colour(x_cordinate, y_cordinate, colour)
     end
   end
 
