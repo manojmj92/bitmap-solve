@@ -13,7 +13,7 @@ module Command
         def self.valid_arguments?(args)
             raise ArgumentError, "wrong number of arguments for #{self.name}" if args.size != 3
             x_coordinate, y_coordinate, colour = *args
-            raise ArgumentError, "wrong type of arguments" unless (x_coordinate.integer? &&  y_coordinate.integer? && !colour.integer?)
+            raise ArgumentError, "wrong type of arguments" unless (x_coordinate.integer? &&  y_coordinate.integer? && colour.colour?)
             true
         end
 

@@ -17,7 +17,7 @@ module Command
                                                                     x_coordinate.integer? &&
                                                                     y_coordinate_start.integer? &&
                                                                     y_coordinate_end.integer? &&
-                                                                    !colour.integer?
+                                                                    colour.colour?
                                                                    )
             true
         end
