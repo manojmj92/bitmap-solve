@@ -1,7 +1,6 @@
 require_relative 'bitmap'
-require_relative 'errors'
-require_relative 'command_parser'
 require_relative 'screen'
+require_relative 'command_parser'
 
 class BitmapEditor
 

@@ -1,4 +1,5 @@
 class Bitmap
+
   attr_reader :width, :height, :image
   def initialize(width,height)
     @height = height
@@ -37,4 +38,5 @@ class Bitmap
   def clean_image
     Array.new(height) { Array.new(width) {'O'} }
   end
+
 end

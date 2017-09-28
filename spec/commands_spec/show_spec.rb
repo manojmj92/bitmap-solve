@@ -16,6 +16,9 @@ describe Show do
             expect{ Show.execute(@screen, []) }.to output("OO\nOO\n").to_stdout
         end
 
+        it "raises ImageNotInitialized if bitmap is empty" do
+            expect{ Show.execute(Screen.new, []) }.to raise_error(ImageNotInitialized)
+        end
 
     end
 end

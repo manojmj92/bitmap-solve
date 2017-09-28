@@ -1,5 +1,4 @@
 require 'ostruct'
-require_relative 'errors'
 
 class CommandParser
 
