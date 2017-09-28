@@ -24,7 +24,7 @@ end
 
 class InvalidArgument < StandardError
     def initialize(klass_name, max_arguments_count)
-        super("Invalid number of arguments for #{klass_name}. Max number of arguments permissible is #{max_arguments_count}")
+        super("Invalid number of arguments for #{klass_name}. Number of arguments needed is #{max_arguments_count}")
     end
 end
 
