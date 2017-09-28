@@ -11,7 +11,7 @@ describe CommandParser do
         it "returns a struct with 2 attributes for a valid input" do
             command_string = "I 5 6"
             result = CommandParser.parse(command_string: command_string)
-            expect(result).to have_attributes(klass: Create, args: ["5","6"])
+            expect(result).to have_attributes(klass: Command::Create, args: ["5","6"])
         end
 
     end

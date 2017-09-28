@@ -1,12 +1,12 @@
 require_relative '../spec_helper'
 
-describe Clear do
+describe Command::Clear do
     describe "#self.execute" do
 
         before do
             @screen = Screen.new
-            Create.execute(@screen, ["2","2"])
-            SetPixel.execute(@screen, ["1","1","A"])
+            Command::Create.execute(@screen, ["2","2"])
+            Command::SetPixel.execute(@screen, ["1","1","A"])
         end
 
         it "clears the bitmap to original version" do
@@ -14,7 +14,7 @@ describe Clear do
                                                 ['A','O'],
                                                 ['O','O']
                                                 ])
-            Clear.execute(@screen, [])
+            Command::Clear.execute(@screen, [])
             expect(@screen.bitmap.image).to eq([
                                                 ['O','O'],
                                                 ['O','O']
@@ -22,11 +22,11 @@ describe Clear do
         end
 
         it "raises ArgumentError for wrong number of arguments" do
-            expect{ Clear.execute(@screen, ["X"]) }.to raise_error(ArgumentError)
+            expect{ Command::Clear.execute(@screen, ["X"]) }.to raise_error(ArgumentError)
         end
 
         it "raises ImageNotInitialized if bitmap is empty" do
-            expect{ Clear.execute(Screen.new, []) }.to raise_error(ImageNotInitialized)
+            expect{ Command::Clear.execute(Screen.new, []) }.to raise_error(ImageNotInitialized)
         end
 
     end

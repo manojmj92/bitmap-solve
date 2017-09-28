@@ -12,7 +12,7 @@ describe Screen do
     end
     describe "#execute" do
         it 'it creates new bitmap when command is Create' do
-            expect{@screen.execute(OpenStruct.new(klass: Create, args: ["5","6"]))}.to change{@screen.bitmap}.from(nil).to(Bitmap)
+            expect{@screen.execute(OpenStruct.new(klass: Command::Create, args: ["5","6"]))}.to change{@screen.bitmap}.from(nil).to(Bitmap)
         end
     end
 end

@@ -3,12 +3,12 @@ require 'ostruct'
 class CommandParser
 
     AVAILABLE_COMMANDS = {
-        'I' => 'Create',
-        'L' => 'SetPixel',
-        'V' => 'ColourVertical',
-        'H' => 'ColourHorizontal',
-        'S' => 'Show',
-        'C' => 'Clear',
+        'I' => 'Command::Create',
+        'L' => 'Command::SetPixel',
+        'V' => 'Command::ColourVertical',
+        'H' => 'Command::ColourHorizontal',
+        'S' => 'Command::Show',
+        'C' => 'Command::Clear',
     }.freeze
 
     def self.parse(command_string:)

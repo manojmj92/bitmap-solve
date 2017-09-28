@@ -1,23 +1,23 @@
 require_relative '../spec_helper'
 
-describe Show do
+describe Command::Show do
     describe "#self.execute" do
 
         before do
             @screen = Screen.new
-            Create.execute(@screen, ["2","2"])
+            Command::Create.execute(@screen, ["2","2"])
         end
 
         it "raises ArgumentError for wrong number of arguments" do
-            expect{ Show.execute(@screen, ["X"]) }.to raise_error(ArgumentError)
+            expect{ Command::Show.execute(@screen, ["X"]) }.to raise_error(ArgumentError)
         end
 
         it "prints the bitmap for correct number of arguments" do
-            expect{ Show.execute(@screen, []) }.to output("OO\nOO\n").to_stdout
+            expect{ Command::Show.execute(@screen, []) }.to output("OO\nOO\n").to_stdout
         end
 
         it "raises ImageNotInitialized if bitmap is empty" do
-            expect{ Show.execute(Screen.new, []) }.to raise_error(ImageNotInitialized)
+            expect{ Command::Show.execute(Screen.new, []) }.to raise_error(ImageNotInitialized)
         end
 
     end

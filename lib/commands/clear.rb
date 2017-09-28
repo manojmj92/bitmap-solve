@@ -1,16 +1,18 @@
-require_relative 'base_command'
+require_relative 'base'
 
-class Clear < BaseCommand
+module Command
+    class Clear < Base
 
-    def self.execute(screen, args)
-        super
-        screen.bitmap.clear
+        def self.execute(screen, args)
+            super
+            screen.bitmap.clear
+        end
+
+        private
+
+        def self.valid_arguments?(args)
+            args.size != 0 ? (raise ArgumentError) : true
+        end
+
     end
-
-    private
-
-    def self.valid_arguments?(args)
-        args.size != 0 ? (raise ArgumentError) : true
-    end
-
 end
