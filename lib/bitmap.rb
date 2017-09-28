@@ -28,7 +28,7 @@ class Bitmap
     end
   end
 
-  def colour_horizontal(y_cordinate, x_cordinate_start, x_cordinate_end, colour)
+  def colour_horizontal(x_cordinate_start, x_cordinate_end, y_cordinate, colour)
     (x_cordinate_start..x_cordinate_end).each do |x_cordinate|
       set_pixel_colour(x_cordinate, y_cordinate, colour)
     end

@@ -4,6 +4,7 @@ require_relative 'commands/show'
 require_relative 'commands/clear'
 require_relative 'commands/set_pixel'
 require_relative 'commands/colour_vertical'
+require_relative 'commands/colour_horizontal'
 
 class Screen
 

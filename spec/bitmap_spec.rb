@@ -79,7 +79,7 @@ describe Bitmap do
 
     describe "#colour horizontal" do
         it "H X1 X2 Y C - Draw a horizontal segment of colour C in row Y between columns X1 and X2 (inclusive)." do
-            @bitmap.colour_horizontal(2, 3, 5, 'Z')
+            @bitmap.colour_horizontal(3, 5, 2, 'Z')
             expect(@bitmap.image).to eq([
                                             ['O','O','O','O','O'],
                                             ['O','O','Z','Z','Z'],

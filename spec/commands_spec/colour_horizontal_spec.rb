@@ -1,6 +1,6 @@
 require_relative '../spec_helper'
 
-describe ColourVertical do
+describe ColourHorizontal do
     describe "#self.execute" do
 
         before do
@@ -8,7 +8,7 @@ describe ColourVertical do
             Create.execute(@screen, ["5","6"])
         end
 
-        it "Draw a vertical segment of colour C in column X between rows Y1 and Y2 (inclusive)." do
+        it "Draw a horizontal segment of colour C in row Y between columns X1 and X2 (inclusive)." do
             expect(@screen.bitmap.image).to eq([
                         ['O','O','O','O','O'],
                         ['O','O','O','O','O'],
@@ -17,27 +17,27 @@ describe ColourVertical do
                         ['O','O','O','O','O'],
                         ['O','O','O','O','O']
                     ])
-            ColourVertical.execute(@screen, ["2","3","6","W"])
+            ColourHorizontal.execute(@screen, ["3","5","2","Z"])
             expect(@screen.bitmap.image).to eq([
                         ['O','O','O','O','O'],
+                        ['O','O','Z','Z','Z'],
                         ['O','O','O','O','O'],
-                        ['O','W','O','O','O'],
-                        ['O','W','O','O','O'],
-                        ['O','W','O','O','O'],
-                        ['O','W','O','O','O']
+                        ['O','O','O','O','O'],
+                        ['O','O','O','O','O'],
+                        ['O','O','O','O','O']
                     ])
         end
 
          it "raises ArgumentError for wrong number of arguments" do
-             expect{ ColourVertical.execute(@screen, ["2","1", "X"]) }.to raise_error(ArgumentError)
+             expect{ ColourHorizontal.execute(@screen, ["2","1", "X"]) }.to raise_error(ArgumentError)
         end
 
         it "raises ArgumentError for invalid arguments" do
-            expect{ ColourVertical.execute(@screen, ["2","3", "W", "W"]) }.to raise_error(ArgumentError)
+            expect{ ColourHorizontal.execute(@screen, ["2","3", "W", "W"]) }.to raise_error(ArgumentError)
         end
 
         it "raises ImageNotInitialized if bitmap is empty" do
-            expect{ ColourVertical.execute(Screen.new, ["1","1","2","W"]) }.to raise_error(ImageNotInitialized)
+            expect{ ColourHorizontal.execute(Screen.new, ["1","1","2","W"]) }.to raise_error(ImageNotInitialized)
         end
     end
 end
