@@ -1,3 +1,7 @@
+=begin
+    Command::ColourVertical - Used to colour a vertical patch of pixels
+=end
+
 require_relative 'base'
 
 module Command

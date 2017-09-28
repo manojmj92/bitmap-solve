@@ -1,3 +1,8 @@
+=begin
+    Command::Show - Used to print the bitmap to screen
+=end
+
+
 require_relative 'base'
 
 module Command

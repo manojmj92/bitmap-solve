@@ -1,3 +1,7 @@
+=begin
+    Command::Clear - Used to clear the image in the screen.
+=end
+
 require_relative 'base'
 
 module Command

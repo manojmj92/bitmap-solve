@@ -1,3 +1,8 @@
+=begin
+    Command::SetPixel - Used to colour a single pixel in the bitmap using specified colour
+=end
+
+
 require_relative 'base'
 
 module Command

@@ -1,3 +1,9 @@
+=begin
+    Screen
+    Screen is the basic object which contains the bitmap
+    All commands are executed on the screen object
+=end
+
 require_relative 'errors'
 require_relative 'commands/create'
 require_relative 'commands/show'

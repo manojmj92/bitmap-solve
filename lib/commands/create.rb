@@ -1,3 +1,9 @@
+=begin
+    Command::Create - Used to create a new bitmap image with specified height and width.
+    This class does not inherit from Command::Base because an existing image is not a
+    prerequisite for this command.
+=end
+
 module Command
     class Create
         MAX_ARGUMENTS_COUNT = 2

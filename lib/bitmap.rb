@@ -1,3 +1,10 @@
+=begin
+    Bitmap -
+    This class creates a new image with specified width and height.
+    All public methods to manipulate the existing image goes in here.
+=end
+
+
 class Bitmap
 
   attr_reader :width, :height, :image
@@ -36,6 +43,7 @@ class Bitmap
 
   private
 
+  # to check if the specified coordinates are out of range of the existing image
   def out_of_range?(x_cordinate, y_cordinate)
     height_range = (1..height)
     width_range = (1..width)

@@ -1,3 +1,6 @@
+=begin
+    Command::ColourHorizontal - Used to colour a horizontal patch of pixels
+=end
 require_relative 'base'
 
 module Command
