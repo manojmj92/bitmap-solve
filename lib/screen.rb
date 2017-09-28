@@ -3,6 +3,7 @@ require_relative 'commands/create'
 require_relative 'commands/show'
 require_relative 'commands/clear'
 require_relative 'commands/set_pixel'
+require_relative 'commands/colour_vertical'
 
 class Screen
 
