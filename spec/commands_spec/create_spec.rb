@@ -18,5 +18,9 @@ describe Create do
         it "raises ArgumentError for invalid arguments" do
             expect{ Create.execute(@screen, ["5","W"]) }.to raise_error(ArgumentError)
         end
+
+        it "raises OutOfBoundsError for invalid size of bitmap" do
+            expect{ Create.execute(@screen, ["251","1"]) }.to raise_error(OutOfBoundsError)
+        end
     end
 end
