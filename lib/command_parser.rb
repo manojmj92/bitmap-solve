@@ -14,7 +14,7 @@ class CommandParser
     def self.parse(command_string:)
 
         command, *args = command_string.split
-        raise InvalidCommand unless AVAILABLE_COMMANDS.has_key?(command)
+        raise InvalidCommand.new(command, AVAILABLE_COMMANDS.keys) unless AVAILABLE_COMMANDS.has_key?(command)
         OpenStruct.new(klass: Object.const_get(AVAILABLE_COMMANDS[command]), args: args)
     end
 

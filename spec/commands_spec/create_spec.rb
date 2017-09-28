@@ -11,16 +11,16 @@ describe Command::Create do
             expect{ Command::Create.execute(@screen, ["5","6"]) }.to change{@screen.bitmap}.from(nil).to(Bitmap)
         end
 
-        it "raises ArgumentError for wrong number of arguments" do
-            expect{ Command::Create.execute(@screen, ["5","6", "8"]) }.to raise_error(ArgumentError)
+        it "raises InvalidArgument for wrong number of arguments" do
+        expect{ Command::Create.execute(@screen, ["5","6", "8"]) }.to raise_error(InvalidArgument)
         end
 
-        it "raises ArgumentError for invalid arguments" do
-            expect{ Command::Create.execute(@screen, ["5","W"]) }.to raise_error(ArgumentError)
+        it "raises InvalidArgumentType for invalid arguments" do
+            expect{ Command::Create.execute(@screen, ["5","W"]) }.to raise_error(InvalidArgumentType)
         end
 
-        it "raises OutOfBoundsError for invalid size of bitmap" do
-            expect{ Command::Create.execute(@screen, ["251","1"]) }.to raise_error(OutOfBoundsError)
+        it "raises OutOfBounds for invalid size of bitmap" do
+            expect{ Command::Create.execute(@screen, ["251","1"]) }.to raise_error(OutOfBounds)
         end
     end
 end

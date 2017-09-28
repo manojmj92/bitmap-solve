@@ -21,8 +21,8 @@ describe Command::Clear do
                                                 ])
         end
 
-        it "raises ArgumentError for wrong number of arguments" do
-            expect{ Command::Clear.execute(@screen, ["X"]) }.to raise_error(ArgumentError)
+        it "raises InvalidArgument for wrong number of arguments" do
+            expect{ Command::Clear.execute(@screen, ["X"]) }.to raise_error(InvalidArgument)
         end
 
         it "raises ImageNotInitialized if bitmap is empty" do

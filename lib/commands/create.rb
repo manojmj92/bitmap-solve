@@ -1,6 +1,6 @@
 module Command
     class Create
-
+        MAX_ARGUMENTS_COUNT = 2
         def self.execute(screen, args)
             if valid_arguments?(args)
                 screen.bitmap = Bitmap.new(*argument_parser(args))
@@ -10,10 +10,10 @@ module Command
         private
 
         def self.valid_arguments?(args)
-            raise ArgumentError, "wrong number of arguments for #{self.name}" if args.size != 2
+            raise InvalidArgument.new(self.name, MAX_ARGUMENTS_COUNT) if args.size != MAX_ARGUMENTS_COUNT
             width, height = *args
-            raise ArgumentError, "wrong type of arguments" unless (width.integer? &&  height.integer?)
-            raise OutOfBoundsError if (width.to_i > 250 || height.to_i > 250 || width.to_i < 1 || height.to_i < 1)
+            raise InvalidArgumentType.new(self.name) unless (width.integer? &&  height.integer?)
+            raise OutOfBounds if (width.to_i > 250 || height.to_i > 250 || width.to_i < 1 || height.to_i < 1)
             true
         end
 

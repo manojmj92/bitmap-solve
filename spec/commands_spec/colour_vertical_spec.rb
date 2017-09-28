@@ -28,12 +28,12 @@ describe Command::ColourVertical do
                     ])
         end
 
-         it "raises ArgumentError for wrong number of arguments" do
-             expect{ Command::ColourVertical.execute(@screen, ["2","1", "X"]) }.to raise_error(ArgumentError)
+         it "raises InvalidArgument for wrong number of arguments" do
+             expect{ Command::ColourVertical.execute(@screen, ["2","1", "X"]) }.to raise_error(InvalidArgument)
         end
 
-        it "raises ArgumentError for invalid arguments" do
-            expect{ Command::ColourVertical.execute(@screen, ["2","3", "W", "W"]) }.to raise_error(ArgumentError)
+        it "raises InvalidArgumentType for invalid arguments" do
+            expect{ Command::ColourVertical.execute(@screen, ["2","3", "W", "W"]) }.to raise_error(InvalidArgumentType)
         end
 
         it "raises ImageNotInitialized if bitmap is empty" do

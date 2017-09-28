@@ -6,7 +6,7 @@ class BitmapEditor
 
   def run(file)
 
-    raise FileError, "please provide correct file" if (file.nil? || !File.exists?(file))
+    raise FileError if (file.nil? || !File.exists?(file))
     screen = Screen.new
     File.open(file).each do |line|
       line = line.chomp

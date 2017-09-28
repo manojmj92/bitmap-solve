@@ -8,8 +8,8 @@ describe Command::Show do
             Command::Create.execute(@screen, ["2","2"])
         end
 
-        it "raises ArgumentError for wrong number of arguments" do
-            expect{ Command::Show.execute(@screen, ["X"]) }.to raise_error(ArgumentError)
+        it "raises InvalidArgument for wrong number of arguments" do
+            expect{ Command::Show.execute(@screen, ["X"]) }.to raise_error(InvalidArgument)
         end
 
         it "prints the bitmap for correct number of arguments" do

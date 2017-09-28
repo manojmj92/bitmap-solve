@@ -47,8 +47,8 @@ describe Bitmap do
 
                                         ])
         end
-        it "raises OutOfBoundsError if coordinates are out of the area of bitmap" do
-            expect {@bitmap.set_pixel_colour(1, 7, 'A')}.to raise_error(OutOfBoundsError)
+        it "raises OutOfBounds if coordinates are out of the area of bitmap" do
+            expect {@bitmap.set_pixel_colour(1, 7, 'A')}.to raise_error(OutOfBounds)
         end
     end
 

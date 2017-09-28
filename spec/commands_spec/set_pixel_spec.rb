@@ -20,12 +20,12 @@ describe Command::SetPixel do
                     ])
         end
 
-         it "raises ArgumentError for wrong number of arguments" do
-             expect{ Command::SetPixel.execute(@screen, ["5","6"]) }.to raise_error(ArgumentError)
+         it "raises InvalidArgument for wrong number of arguments" do
+             expect{ Command::SetPixel.execute(@screen, ["5","6"]) }.to raise_error(InvalidArgument)
         end
 
-        it "raises ArgumentError for invalid arguments" do
-            expect{ Command::Create.execute(@screen, ["5","5", "5"]) }.to raise_error(ArgumentError)
+        it "raises InvalidArgumentType for invalid arguments" do
+            expect{ Command::SetPixel.execute(@screen, ["5","5", "5"]) }.to raise_error(InvalidArgumentType)
         end
 
         it "raises ImageNotInitialized if bitmap is empty" do

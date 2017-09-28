@@ -18,7 +18,7 @@ class Bitmap
   end
 
   def set_pixel_colour(x_cordinate, y_cordinate, colour)
-    raise OutOfBoundsError if out_of_range?(x_cordinate, y_cordinate)
+    raise OutOfBounds if out_of_range?(x_cordinate, y_cordinate)
     @image[y_cordinate - 1][x_cordinate - 1] = colour
   end
 
