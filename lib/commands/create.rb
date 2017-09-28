@@ -1,6 +1,7 @@
 require_relative 'base_command'
 
 class Create < BaseCommand
+
     def self.execute(screen, args)
         screen.bitmap = Bitmap.new(*argument_validator(args))
     end
@@ -14,4 +15,5 @@ class Create < BaseCommand
         raise OutOfBoundsError if (width.to_i > 250 || height.to_i > 250 || width.to_i < 1 || height.to_i < 1)
         [width.to_i, height.to_i]
     end
+
 end

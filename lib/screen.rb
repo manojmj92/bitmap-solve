@@ -2,6 +2,7 @@ require_relative 'commands/create'
 require_relative 'commands/show'
 
 class Screen
+
     attr_accessor :bitmap
     def initialize
         @bitmap = nil
@@ -10,4 +11,5 @@ class Screen
     def execute(command)
         command.klass.execute(self, command.args)
     end
+
 end

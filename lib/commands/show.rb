@@ -1,6 +1,7 @@
 require_relative 'base_command'
 
 class Show < BaseCommand
+
     def self.execute(screen, args)
         super(screen)
         argument_validator(args)
