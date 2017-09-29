@@ -7,7 +7,8 @@
 
 class Bitmap
 
-  attr_reader :width, :height, :image
+  attr_reader :width, :height
+  attr_accessor :image
   def initialize(width,height)
     @height = height
     @width = width
@@ -15,18 +16,18 @@ class Bitmap
   end
 
   def print
-    @image.inject("") do |result, row|
+    image.inject("") do |result, row|
       result << row.join('') << "\n"
     end
   end
 
   def clear
-    @image = clean_image
+    self.image = clean_image
   end
 
   def set_pixel_colour(x_cordinate, y_cordinate, colour)
     raise OutOfBounds if out_of_range?(x_cordinate, y_cordinate)
-    @image[y_cordinate - 1][x_cordinate - 1] = colour
+    image[y_cordinate - 1][x_cordinate - 1] = colour
   end
 
   def colour_vertical(x_cordinate, y_cordinate_start, y_cordinate_end, colour)
